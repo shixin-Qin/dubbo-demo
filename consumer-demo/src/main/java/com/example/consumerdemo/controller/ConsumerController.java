@@ -4,6 +4,7 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import service.EatService;
 import service.SayService;
 
 /**
@@ -19,9 +20,17 @@ public class ConsumerController {
     
     @DubboReference
     private SayService sayService;
+    
+    @DubboReference
+    private EatService eatService;
 
     @GetMapping("/say")
     public String say(){
         return sayService.say();
+    }
+    
+    @GetMapping("/eatApple")
+    public void eatApple(){
+        eatService.eatApple();
     }
 }

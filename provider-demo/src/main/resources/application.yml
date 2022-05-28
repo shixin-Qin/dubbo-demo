@@ -10,6 +10,8 @@ dubbo:
   protocol:
     name: dubbo
     port: 20881
+  application:
+    register-mode: instance
   scan:
     base-packages: com.example.provider.rpcservice
 
